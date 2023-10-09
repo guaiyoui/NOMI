@@ -1,0 +1,14 @@
+/backup/
+/logs/
+/scripts/
+/__pycache__/
+/connect.csv
+/news.csv
+/phishing.csv
+/poker.csv
+/spam.csv
+/yeast.csv
+main_base.py
+main_hnsw_batch.py
+main_hnswlib.py
+main.py
