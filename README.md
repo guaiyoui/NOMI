@@ -1,4 +1,9 @@
-This is the code for the review of the paper "Missing Data Imputation with Uncertainty-Driven Network"
+This is the code for the paper "Missing Data Imputation with Uncertainty-Driven Network" which is accepted by SIGMOD 2024.
+
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/guaiyoui/graph-analytics-starter-pack) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Made With Love](https://img.shields.io/badge/Made%20With-Love-red.svg)](https://github.com/chetanraj/awesome-github-badges)
+
 
 ### Folder Structure
 
