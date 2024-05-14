@@ -6,7 +6,7 @@ import numpy as np
 from data_loader import data_loader
 from utils import normalization, renormalization, rounding, MAE, RMSE, sample_batch_index, dist2sim
 from sklearn.neighbors import NearestNeighbors
-# from model import NNGP_Imputation, MLP, MLP_Imputation
+from model import NNGP_Imputation, MLP, MLP_Imputation
 from tqdm import tqdm
 from nngp import NNGP
 from neural_tangents import stax
@@ -50,6 +50,9 @@ def main(args):
     )
 
     start = time.time()
+
+    time_index = 0 
+    
     for iteration in range(args.max_iter):
         for dim in tqdm(range(dims)):
             
@@ -65,9 +68,9 @@ def main(args):
             
             if X_test.shape[0] == 0:
                 continue
-
-            no, d = X_train.shape
             
+            start_index = time.time()
+            no, d = X_train.shape
             index = hnswlib.Index(space=args.metric, dim=d)
             index.init_index(max_elements=no, ef_construction=200, M=16)
             index.add_items(X_train)
@@ -96,10 +99,15 @@ def main(args):
             y_neighbors_test = Y_train[neigh_ind_test[:, :-1]]
             test_input = weights_test*y_neighbors_test
 
+            time_index += time.time()-start_index
+            
+            # print("start nngp training")
             predict_fn = nt.predict.gradient_descent_mse_ensemble(kernel_fn, 
                     train_input, Y_batch.reshape(-1, 1), diag_reg=1e-4)
             
             y_pred, pred_cov = prediction(predict_fn, test_input, kernel_type="nngp")
+            # print(y_pred, pred_cov)
+            # pred_cov = np.nan_to_num(pred_cov, nan=1.0)
             
 
             if iteration == 0:
@@ -125,6 +133,9 @@ def main(args):
     imputed_data = renormalization(imputed_X, norm_parameters)  
     imputed_data = rounding(imputed_data, data_x)
     print(ori_data_x[0], imputed_data[0], data_x[0])
+    
+    print("the input construction time: ", time_index)
+    
     print('\n##### RMSE Performance: ' + str(np.round(RMSE(imputed_data, ori_data_x, data_m), 4)))
     print('\n##### MAE Performance: ' + str(np.round(MAE(imputed_data, ori_data_x, data_m), 4)))
 

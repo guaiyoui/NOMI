@@ -16,11 +16,12 @@ def data_loader(data_name, miss_rate, missing_mechanism, args):
   '''
   
   # Load data
-  if data_name in ['letter', 'spam', 'wine', 'heart', 'breast', 'phishing', 'wireless', 'turkiye', 'credit', 'connect', 'car', 'chess', 'news', 'shuttle', 'poker', 'abalone', 'yeast']:
+  if data_name in ['letter', 'spam', 'wine', 'heart', 'breast', 'phishing', 'wireless', 'turkiye', 'credit', 'connect', 'car', 'chess', 'news', 'shuttle', 'poker', 'abalone', 'yeast', 'retail', 'higgs', 'wisdm']:
     file_name = 'data/'+data_name+'.csv'
     data_x = np.loadtxt(file_name, delimiter=",", skiprows=1)
   # Parameters
   
+  print(file_name, data_x.shape)
   feature_dim = int(data_x.shape[1]*args.feature_dim)
   data_x = data_x[:, :feature_dim]
 

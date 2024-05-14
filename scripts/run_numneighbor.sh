@@ -1,0 +1,25 @@
+
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 4 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 4 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 4 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 6 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 6 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 6 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 8 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 8 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 8 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 10 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 10 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 10 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 12 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 12 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 12 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 14 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 14 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 14 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 16 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 16 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 16 >> ./logs/shuttle_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name letter --k_candidate 18 >> ./logs/letter_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name chess --k_candidate 18 >> ./logs/chess_neighbor.txt 2>&1 ;
+nohup python3 -u main_hnsw_fast.py --data_name shuttle --k_candidate 18 >> ./logs/shuttle_neighbor.txt 2>&1 ;
